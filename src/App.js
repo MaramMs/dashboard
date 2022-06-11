@@ -54,7 +54,7 @@ const App = () => {
         <div>
           <Routes> 
             {/* Dashborad*/}
-            <Route path="/" element={<Ecommerce />} />
+            <Route path="/"  />
             <Route path="/ecommerce" element={<Ecommerce />} />
 
             {/*Pages */}
