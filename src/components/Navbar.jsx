@@ -13,7 +13,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent position="BottomCenter" content={title}>
     <button
       type="button"
-      onClick={customFunc}
+      onClick={() => customFunc()}
       style={{ color }}
       className="relative text-xl rounded-full p-3 hover:bg-light-gray"
     >
@@ -105,7 +105,7 @@ const Navbar = () => {
         {isClicked.chat && <Chat />}
 
         {isClicked.notification && <Notification />}
-        {isClicked.userProfile && <UserProfile />} 
+        {isClicked.userProfile && <UserProfile />}  
 
       </div>
       
@@ -115,3 +115,8 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
