@@ -10,7 +10,7 @@ import Cart  from  './Cart'
 import Sidebar  from  './Sidebar'
 import ThemeSettings  from  './ThemeSettings'
 import LineChart  from  './Charts/LineChart'
-import Pie  from  './Charts/Pie'
+import PieChart  from  './Charts/PieChart'
 import Stacked  from  './Charts/Stacked'
 import SparkLine from  './Charts/SparkLine'
 
@@ -27,7 +27,7 @@ export {
     Sidebar,
     ThemeSettings,
     LineChart,
-    Pie,
+    PieChart,
     Stacked,
     SparkLine
 };

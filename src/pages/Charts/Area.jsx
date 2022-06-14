@@ -20,7 +20,7 @@ const Area = () => {
 
   const {currentMode} =useStateContext ();
   return (
-      <div className='m-4 md:m-10 p-4  md:p-10 rounded-3xl bg-white  dark:bg-secondary-dark-bg'>
+      <div  className="m-4 md:m-10 mt-24  p-10   rounded-3xl bg-white  dark:bg-secondary-dark-bg">
       <Header category ='Chart' title='Inflation Rate'/>
       <ChartComponent
       id="area-chart"
