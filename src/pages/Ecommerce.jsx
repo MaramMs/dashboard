@@ -1,11 +1,11 @@
 import React from "react";
-import { Button, SparkLine, Stacked } from "../components";
+import { Button, SparkLine, StackedChart } from "../components";
 import { GoPrimitiveDot } from "react-icons/go";
 import { earningData, SparklineAreaData } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {
-  const {currentColor} = useStateContext()
+  const { currentColor } = useStateContext();
   return (
     <div className="mt-2">
       <div className="flex  flex-wrap lg:flex-nowrap justify-center">
@@ -85,73 +85,56 @@ const Ecommerce = () => {
           </div>
 
           <div className="mt-10 flex gap-10 flex-wrap justify-center">
-          <div className="border-r-1 border-color m-4 pr-10">
-            <div>
-              <p>
-                <span className="font-semivold text-3xl">$89.2582</span>
+            <div className="border-r-1 border-color m-4 pr-10">
+              <div>
+                <p>
+                  <span className="font-semivold text-3xl">$89.2582</span>
 
-                <span
-                  className="p-1.5 rounded-full
+                  <span
+                    className="p-1.5 rounded-full
                  bg-green-400 text-white text-xs cursor-pointer  hover:drop-shadow-xl "
-                >
-                  23%
-                </span>
-              </p>
+                  >
+                    23%
+                  </span>
+                </p>
 
-              <p className="text-gray-500 mt-1">Budget</p>
+                <p className="text-gray-500 mt-1">Budget</p>
+              </div>
+
+              <div className="mt-8">
+                <p>
+                  <span className="font-semivold text-3xl">$45.258</span>
+                </p>
+
+                <p className="text-gray-500 mt-1">Expense</p>
+              </div>
+
+              <div className="mt-5">
+                <SparkLine
+                  currentColor={currentColor}
+                  id="line-sparkline"
+                  type="Line"
+                  height="80px"
+                  width="250px"
+                  data={SparklineAreaData}
+                  color={currentColor}
+                />
+              </div>
+              <div className="mt-10">
+                <Button
+                  color="white"
+                  text="Download Report"
+                  borderRaduis="10px"
+                  bgColor={currentColor}
+                />
+              </div>
             </div>
 
-            <div className="mt-8">
-              <p>
-                <span className="font-semivold text-3xl">$45.258</span>
-              </p>
-
-              <p className="text-gray-500 mt-1">Expense</p>
+            <div>
+              <StackedChart width="320px" height="360px" />
             </div>
-      
-    
-            <div className="mt-5">
-              <SparkLine  
-              currentColor ={currentColor}
-              id='line-sparkline'
-              type='Line'
-              height='80px'
-              width='250px'
-              data={SparklineAreaData}
-              color={currentColor}
-              
-              />
-         
-          </div>
-          <div className="mt-10">
-              <Button 
-              color="white"
-              text="Download Report"
-              borderRaduis='10px'
-              bgColor={currentColor}
-
-              
-              />
-            </div>
-        </div>
-
-     
-        <div>
-
-        <Stacked 
-       width='320px'
-       height='360px'
-    
-
-      
-      
-      />
           </div>
         </div>
-
-      
-
-  </div>
       </div>
     </div>
   );

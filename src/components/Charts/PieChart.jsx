@@ -3,47 +3,47 @@ import {
   AccumulationChartComponent,
   AccumulationSeriesCollectionDirective,
   AccumulationSeriesDirective,
-  PyramidSeries,
+  PieSeries,
   Inject,
   AccumulationLegend,
   AccumulationDataLabel,
   AccumulationTooltip,
 } from "@syncfusion/ej2-react-charts";
 
-import { PyramidData } from "../../data/dummy";
+import { pieChartData } from "../../data/dummy";
 import { useStateContext } from "../../contexts/ContextProvider";
-import { Header } from "../../components";
-const Pyramid = () => {
+const PieChart = () => {
   const { currentMode } = useStateContext();
   return (
-
-    <div className="m-4 md:m-10 mt-24  p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
-     <Header category="Pyramid" title="Food Comparison Chart"/>
-<div className="w-full">
-<AccumulationChartComponent
-      id="pyramid-chart"
+    <AccumulationChartComponent
+      id="charts"
+      height="full"
       tooltip={{ enable: true }}
       background={currentMode === "Dark" ? "#33373e" : "#fff"}
-      legendSettings={{ background: "white" }}
+      legendSettings={{ visible: true, background: "white" }}
     >
       <AccumulationSeriesCollectionDirective>
         <AccumulationSeriesDirective
-          dataSource={PyramidData}
+          dataSource={pieChartData}
           xName="x"
           yName="y"
-          type='Pyramid'
-          name="Food"
-          width="45%"
-          height="80%"
-          neckHeight="15%"
-          gapRatio={0.03}
-          explode
-          emptyPointSettings={{ mode: 'Drop', fill: 'red' }}
+          type="Pie"
+          name="Sale"
+          innerRadius="40%"
+          startAngle={0}
+          endAngle={360}
+          radius="70%"
+          explode={true}
+          explodeOffset="10%"
+          explodeIndex={2}
           dataLabel={{
             visible: true,
             name: "text",
             position: "Inside",
-    
+            font: {
+              fontWeight: "600",
+              color: "#fff",
+            },
           }}
         ></AccumulationSeriesDirective>
       </AccumulationSeriesCollectionDirective>
@@ -51,15 +51,13 @@ const Pyramid = () => {
       <Inject
         services={[
           AccumulationTooltip,
-          PyramidSeries,
+          PieSeries,
           AccumulationLegend,
           AccumulationDataLabel,
         ]}
       />
     </AccumulationChartComponent>
-</div>
-    </div>
   );
 };
 
-export default Pyramid;
+export default PieChart;

@@ -8,7 +8,7 @@ import ColorPicker from './ColorPicker';
 import Orders from './Orders';
 import Area from './Charts/Area';
 import  Bar from './Charts/Bar';
-import LineChart from './Charts/LineChart';
+import Line from './Charts/Line';
 import Financial from './Charts/Financial';
 import ColorMapping from './Charts/ColorMapping';
 import Stacked from './Charts/Stacked';
@@ -26,7 +26,7 @@ export  {
     Orders,
     Area,
     Bar,
-    LineChart,
+    Line,
     Financial,
     ColorMapping,
     Stacked,
