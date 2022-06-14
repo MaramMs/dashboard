@@ -14,7 +14,7 @@ import {
   Orders,
   Area,
   Bar,
-  LineChart,
+  Line,
   Financial,
   ColorMapping,
   Stacked,
@@ -26,9 +26,15 @@ import { useStateContext } from "./contexts/ContextProvider";
 
 import "./App.css";
 const App = () => {
-  const { activeMenu,themeSettings,setThemeSettings,currentColor,currentMode} = useStateContext();
+  const {
+    activeMenu,
+    themeSettings,
+    setThemeSettings,
+    currentColor,
+    currentMode,
+  } = useStateContext();
   return (
-    <div className={currentMode === 'Dark' ? 'dark' : ''}>
+    <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-bg">
           <div className="fixed right-4 bottom-4">
@@ -36,9 +42,8 @@ const App = () => {
               <button
                 type="buttom"
                 className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-                style={{ backgroundColor:currentColor, borderRadius: "50%" }}
-
-                onClick={() =>setThemeSettings(true) }
+                style={{ backgroundColor: currentColor, borderRadius: "50%" }}
+                onClick={() => setThemeSettings(true)}
               >
                 <FiSettings />
               </button>
@@ -63,8 +68,7 @@ const App = () => {
               <Navbar />
             </div>
             <div>
-
-            {themeSettings &&  <ThemeSettings />} 
+              {themeSettings && <ThemeSettings />}
               <Routes>
                 {/* Dashborad*/}
                 <Route path="/" element={<Ecommerce />} />
@@ -82,7 +86,7 @@ const App = () => {
                 <Route path="/color-picker" element={<ColorPicker />} />
 
                 {/* charts */}
-                <Route path="/line" element={<LineChart />} />
+                <Route path="/line" element={<Line />} />
                 <Route path="/area" element={<Area />} />
                 <Route path="/bar" element={<Bar />} />
                 <Route path="/pie" element={<Pie />} />
