@@ -11,7 +11,7 @@ import Sidebar  from  './Sidebar'
 import ThemeSettings  from  './ThemeSettings'
 import LineChart  from  './Charts/LineChart'
 import PieChart  from  './Charts/PieChart'
-import Stacked  from  './Charts/Stacked'
+import StackedChart  from  './Charts/StackedChart'
 import SparkLine from  './Charts/SparkLine'
 
 export {
@@ -28,6 +28,6 @@ export {
     ThemeSettings,
     LineChart,
     PieChart,
-    Stacked,
+    StackedChart,
     SparkLine
 };
