@@ -7,14 +7,14 @@ import { links } from "../data/dummy";
 
 import { useStateContext } from "../contexts/ContextProvider";
 const Sidebar = () => {
-  const {activeMenu,setActiveMenu,screenSize} = useStateContext()
-     
+  const { activeMenu, setActiveMenu, screenSize, currentColor } =
+    useStateContext();
 
-  const handleCloseSideBar =() =>{
-    if(activeMenu && screenSize <= 900){
-      setActiveMenu(false)
+  const handleCloseSideBar = () => {
+    if (activeMenu && screenSize <= 900) {
+      setActiveMenu(false);
     }
-  }
+  };
   const activeLink =
     "flex items-center pl-4 gap-5 pt-3 pb-2.5 rounded-lg  text-white text-md m-2";
   const normalLink =
@@ -35,7 +35,7 @@ const Sidebar = () => {
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
                 type="button"
-                onClick={() => setActiveMenu((prev)=> !prev)}
+                onClick={() => setActiveMenu((prev) => !prev)}
                 className="mt-4  text-xl rounded-full p-3 hover:bg-light-gray block  "
               >
                 <MdOutlineCancel />
@@ -52,8 +52,11 @@ const Sidebar = () => {
                     to={`/${link.name}`}
                     key={link.name}
                     onClick={handleCloseSideBar}
-                    className={
-                      ({isActive}) => isActive ? activeLink : normalLink
+                    style={({ isActive }) => ({
+                      backgroundColor: isActive ? currentColor : "",
+                    })}
+                    className={({ isActive }) =>
+                      isActive ? activeLink : normalLink
                     }
                   >
                     {link.icon}
