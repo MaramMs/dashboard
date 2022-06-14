@@ -8,7 +8,7 @@ import { cartData } from "../data/dummy";
 import { Button } from ".";
 
 const Cart = () => {
-  const { currentColor, setActiveMenu } = useStateContext();
+  const { currentColor } = useStateContext();
 
   return (
     <div className="bg-half-transparent  w-full top-0 right-0 fixed nav-item">
@@ -16,15 +16,13 @@ const Cart = () => {
         <div className="flex justify-between items-center">
           <p className="font-semivold text-lg">Shopping Cart</p>
 
-          <TooltipComponent content="Menu" position="BottomCenter">
-            <button
-              type="button"
-              onClick={() => setActiveMenu((prev) => !prev)}
-              className="mt-4  text-xl rounded-full p-3 hover:bg-light-gray block  "
-            >
-              <MdOutlineCancel />
-            </button>
-          </TooltipComponent>
+          <Button
+          icon={<MdOutlineCancel />}
+          color="rgb(153, 171, 180)"
+          bgHoverColor="light-gray"
+          size="2xl"
+          borderRadius="50%"
+        />
         </div>
         {cartData.map((item, index) => (
           <div key={index}>

@@ -1,15 +1,14 @@
 import React from "react";
 import { MdOutlineCancel } from "react-icons/md";
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
+
 
 import { useStateContext } from "../contexts/ContextProvider";
-import { cartData, chatData } from "../data/dummy";
+import { chatData } from "../data/dummy";
 import { Button } from ".";
-import { ChartAnnotation } from "@syncfusion/ej2-react-charts";
+
 
 const Chat = () => {
-  const { currentColor, setActiveMenu } = useStateContext();
+  const { currentColor } = useStateContext();
 
   return (
     <div className=" absolute top-16 md:right-52 right-5 bg-white p-8 rounded-lg w-96  nav-item dark:bg-[#42464d]">
@@ -23,6 +22,13 @@ const Chat = () => {
             5 New
           </button>
         </div>
+        <Button
+          icon={<MdOutlineCancel />}
+          color="rgb(153, 171, 180)"
+          bgHoverColor="light-gray"
+          size="2xl"
+          borderRadius="50%"
+        />
       </div>
       <div className="mt-5">
         {chatData.map((item, index) => (
@@ -68,3 +74,5 @@ const Chat = () => {
 };
 
 export default Chat;
+
+
