@@ -14,12 +14,14 @@ import {
   Edit,
 } from "@syncfusion/ej2-react-grids";
 
+
 import { ordersData,ordersGrid } from "../data/dummy";
 import { Header } from "../components";
 
 const Orders = () => {
+
   return (
- <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl"> 
+ <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl dark:bg-secondary-dark-bg"> 
 
   <Header category='Page' title='Orders' />
    <GridComponent 
@@ -27,6 +29,8 @@ const Orders = () => {
     dataSource={ordersData}
     allowPaging={true}
     allowSorting={true}
+ 
+
     >
       <ColumnsDirective>
         {ordersGrid.map((item, index) => (

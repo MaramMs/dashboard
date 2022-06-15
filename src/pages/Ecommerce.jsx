@@ -5,7 +5,7 @@ import { earningData, SparklineAreaData } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor,currentMode } = useStateContext();
   return (
     <div className="mt-2">
       <div className="flex  flex-wrap lg:flex-nowrap justify-center">
@@ -118,8 +118,12 @@ const Ecommerce = () => {
                   width="250px"
                   data={SparklineAreaData}
                   color={currentColor}
+                 
+               
                 />
               </div>
+
+              
               <div className="mt-10">
                 <Button
                   color="white"
@@ -131,12 +135,13 @@ const Ecommerce = () => {
             </div>
 
             <div>
-              <StackedChart width="320px" height="360px" />
+              <StackedChart  currentMode={currentMode}  width="320px" height="360px" />
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+
+</div>
+</div>
+</div>
   );
 };
 
