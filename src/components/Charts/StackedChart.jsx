@@ -14,7 +14,9 @@ import {
   stackedPrimaryXAxis,
   stackedPrimaryYAxis,
 } from "../../data/dummy";
+import { useStateContext } from "../../contexts/ContextProvider";
 const StackedChart = ({ width, height }) => {
+  const {currentMode} = useStateContext();
   return (
     <ChartComponent
       width={width}
@@ -25,6 +27,7 @@ const StackedChart = ({ width, height }) => {
       primaryYAxis={stackedPrimaryYAxis}
       tooltip={{ enable: true }}
       legendSettings={{ background: "white" }}
+      background={currentMode === 'Dark' ? '#33373E' : '#fff'}
     >
       <Inject services={[StackingColumnSeries, Legend, Category, Tooltip]} />
 

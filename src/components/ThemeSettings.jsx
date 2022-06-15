@@ -12,14 +12,16 @@ const ThemeSettings = () => {
   const {currentMode,setMode,themeSettings ,setTheme,setThemeSettings, currentColor,setCurrentColor,setColor} = useStateContext ()
   return (
     <div className="bg-half-transparent w-screen fixed top-0 right-0 nav-item  ">
-      <div className="float-right bg-white h-screen dark:text-gray-200 dark:[#484b52] w-400 ">
+      <div className="float-right bg-white h-screen dark:text-gray-200 dark:[#484b52] w-400 dark:bg-secondary-dark-bg ">
         <div className="flex justify-between items-center p-4 ml-4">
           <p className="font-semibold text-xl">Settings</p>
           <button
             type="button"
             style={{ color: "rgba(153,171,180", borderRadius: "50%" }}
             onClick={() =>  setThemeSettings(false)}
-            className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
+            className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray "
+        
+
           >
             <MdOutlineCancel />
           </button>
