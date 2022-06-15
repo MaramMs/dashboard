@@ -36,8 +36,8 @@ all these apps are created by syncfusion.
 - Tailwind Css
 - syncfusion
 
-# Link Live 
-# Dashboard ![](https://dashborad-maram.netlify.app/)
+# Demo 
+[liveLink](https://dashborad-maram.netlify.app/)
 
 # Developer 
 * [Maram Msabeh](https://github.com/MaramMs)
